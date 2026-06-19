@@ -7,6 +7,10 @@ import LandingPage from "../pages/LandingPage";
 import Login from "../pages/Login";
 import DashboardLayout from "../layouts/DashboardLayout";
 import DashboardPage from "../features/dashboard/pages/DashboardPage";
+import ProjectsListPage from "../features/projects/pages/ProjectsListPage";
+import TaskManagementPage from "../features/tasks/pages/TaskManagementPage";
+import TeamAnalysisPage from "../features/team-analysis/pages/TeamAnalysisPage";
+import AIReportsPage from "../features/ai-reports/pages/AIReportsPage";
 
 function RouteManager() {
   const navigate = useNavigate();
@@ -56,6 +60,31 @@ function RouteManager() {
             </DashboardLayout>
           </RequireAuth>
         } />
+
+        <Route path="/projects" element={
+          <RequireAuth>
+            <DashboardLayout><ProjectsListPage /></DashboardLayout>
+          </RequireAuth>
+        } />
+        
+        <Route path="/tasks" element={
+          <RequireAuth>
+            <DashboardLayout><TaskManagementPage /></DashboardLayout>
+          </RequireAuth>
+        } />
+        
+        <Route path="/team-analysis" element={
+          <RequireAuth>
+            <DashboardLayout><TeamAnalysisPage /></DashboardLayout>
+          </RequireAuth>
+        } />
+        
+        <Route path="/ai-reports" element={
+          <RequireAuth>
+            <DashboardLayout><AIReportsPage /></DashboardLayout>
+          </RequireAuth>
+        } />
+        
       </Routes>
     </div>
   );
