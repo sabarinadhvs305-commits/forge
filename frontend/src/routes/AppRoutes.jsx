@@ -11,6 +11,8 @@ import ProjectsListPage from "../features/projects/pages/ProjectsListPage";
 import TaskManagementPage from "../features/tasks/pages/TaskManagementPage";
 import TeamAnalysisPage from "../features/team-analysis/pages/TeamAnalysisPage";
 import AIReportsPage from "../features/ai-reports/pages/AIReportsPage";
+import CreateProjectPage from "../features/projects/pages/CreateProjectPage";
+import IdeaValidationPage from "../features/validation/pages/IdeaValidationPage";
 
 function RouteManager() {
   const navigate = useNavigate();
@@ -82,6 +84,24 @@ function RouteManager() {
         <Route path="/ai-reports" element={
           <RequireAuth>
             <DashboardLayout><AIReportsPage /></DashboardLayout>
+          </RequireAuth>
+        } />
+
+        <Route path="/projects/new" element={
+          <RequireAuth>
+            <DashboardLayout><CreateProjectPage /></DashboardLayout>
+          </RequireAuth>
+        } />
+
+        <Route path="/tasks/manage" element={
+          <RequireAuth>
+            <DashboardLayout><TaskManagementPage /></DashboardLayout>
+          </RequireAuth>
+        } />
+
+        <Route path="/validation/:projectId" element={
+          <RequireAuth>
+            <DashboardLayout><IdeaValidationPage /></DashboardLayout>
           </RequireAuth>
         } />
         
